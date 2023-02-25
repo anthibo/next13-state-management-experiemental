@@ -1,4 +1,4 @@
-import { getCharacters } from '@/api/character.api'
+import { getCharacters } from '@/services/character.api'
 import CharacterCard from '@/components/characters/CharacterCard'
 import React from 'react'
 import { useQuery } from 'react-query'

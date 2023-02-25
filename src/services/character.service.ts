@@ -1,3 +1,5 @@
+import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query'
+
 import { Character } from "@/types/character.type"
 
 const endpoint = 'https://rickandmortyapi.com/graphql'
@@ -35,3 +37,17 @@ export const getCharacters = async (page: number): Promise<[any, Character[] | n
         = await response.json()
     return [null, data.characters.results]
 }
+
+export const apiSlice = createApi({
+    reducerPath: 'pokemonApi',
+    baseQuery: fetchBaseQuery({ baseUrl: 'https://rickandmortyapi.com/graphql' }),
+    endpoints: (builder) => ({
+      getPokemonByName: builder.query<Character, string>({
+        query: (name) => `pokemon/${name}`,
+      }),
+    }),
+  })
+  
+  // Export hooks for usage in functional components, which are
+  // auto-generated based on the defined endpoints
+//   export const { useGetPokemonByNameQuery } = apiSlice

@@ -2,26 +2,6 @@ import { Character, CharacterState as CharactersState, LikedCharactersState } fr
 import type { PayloadAction } from '@reduxjs/toolkit';
 import { createSlice } from '@reduxjs/toolkit';
 
-// const xxx ={
-//     id: 0,
-//     name: '',
-//     status: '',
-//     species: '',
-//     type: '',
-//     gender: '',
-//     origin: {
-//         name: '',
-//         url: ''
-//     },
-//     location: {
-//         name: '',
-//         url: ''
-//     },
-//     image: '',
-//     episode: [],
-//     url: '',
-//     created: ''
-// }
 const initialState: CharactersState = {
     characters: []
 };
